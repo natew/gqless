@@ -16,14 +16,14 @@ export const useFragments = () => {
     startResolving() {
       variant.forEach(([accessor, fragment]) => {
         const fragmentAccessor =
-          accessor.get<FragmentAccessor>(a => a.selection === fragment) ||
+          accessor.get<FragmentAccessor>((a) => a.selection === fragment) ||
           new FragmentAccessor(accessor, fragment)
 
         stopResolving.push(fragmentAccessor.startResolving())
       })
     },
     stopResolving() {
-      stopResolving.forEach(stop => stop())
+      stopResolving.forEach((stop) => stop())
     },
     getRenderVariants() {
       let variants: Variant[] = []
@@ -34,12 +34,12 @@ export const useFragments = () => {
         if (accessor.value || accessor.status === NetworkStatus.idle) return
 
         if (!variants.length) {
-          fragments.forEach(fragment => variants.push([[accessor, fragment]]))
+          fragments.forEach((fragment) => variants.push([[accessor, fragment]]))
           return
         }
 
         const newVariants: typeof variants = []
-        fragments.forEach(fragment => {
+        fragments.forEach((fragment) => {
           for (let i = 0; i < variants.length; i++) {
             const variant = variants[i]
             newVariants.push([...variant, [accessor, fragment]])

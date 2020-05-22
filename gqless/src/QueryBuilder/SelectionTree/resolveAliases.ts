@@ -18,7 +18,7 @@ export function resolveAliases(this: SelectionTree, data: any) {
       let updated = new Set<string>()
 
       const recurseObjectTree = (tree: SelectionTree) =>
-        tree.children.forEach(tree => {
+        tree.children.forEach((tree) => {
           if (tree.selection instanceof Fragment) {
             recurseObjectTree(tree)
             return
@@ -53,13 +53,13 @@ export function resolveAliases(this: SelectionTree, data: any) {
       invariant(
         !originals.size,
         `Unable to resolve aliases for keys ${Array.from(originals.keys())
-          .map(k => `'${k}'`)
+          .map((k) => `'${k}'`)
           .join(', ')} [at path ${this.toString()}]`
       )
     }
 
     if (node instanceof ArrayNode) {
-      ;(data as any[]).forEach(indexData => recurse(node.ofNode, indexData))
+      ;(data as any[]).forEach((indexData) => recurse(node.ofNode, indexData))
     }
   }
 

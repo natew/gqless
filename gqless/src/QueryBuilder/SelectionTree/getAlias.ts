@@ -11,7 +11,7 @@ export const getAlias = (tree: SelectionTree<FieldSelection>) => {
     const aliases = new Map<FieldSelection, string>()
 
     let id = 0
-    tree.parent!.children.forEach(siblingTree => {
+    tree.parent!.children.forEach((siblingTree) => {
       if (!(siblingTree.selection instanceof FieldSelection)) return
 
       if (

@@ -42,7 +42,7 @@ export class FieldNode<TNode extends DataTrait = DataTrait>
 
     const parentSelection = getSelection(ctx)
 
-    let selection = parentSelection?.get<FieldSelection<TNode>>(selection => {
+    let selection = parentSelection?.get<FieldSelection<TNode>>((selection) => {
       if (!(selection instanceof FieldSelection)) return false
 
       return (

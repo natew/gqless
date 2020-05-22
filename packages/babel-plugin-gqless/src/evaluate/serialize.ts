@@ -22,14 +22,14 @@ export const serialize = (path: NodePath, data: any) => {
   }
 
   if (data instanceof DynImport) {
-    const program = path.findParent(p => p.isProgram()) as NodePath<t.Program>
+    const program = path.findParent((p) => p.isProgram()) as NodePath<t.Program>
     return insertImport(program, data)
   }
 
   if (data instanceof Record) {
     if (data.isArray) {
       return t.arrayExpression(
-        data.keys.map(k =>
+        data.keys.map((k) =>
           k.valuePath.node === null ? null : serialize(path, k.value)
         )
       )
@@ -37,7 +37,7 @@ export const serialize = (path: NodePath, data: any) => {
 
     return t.objectExpression(
       data.keys
-        .map(k => {
+        .map((k) => {
           if (k.key === undefined) return
           const isNum = !isNaN(+k.key)
 

@@ -10,7 +10,7 @@ export abstract class File {
   protected import(from: string, ...imports: string[]) {
     if (!this.imports.has(from)) this.imports.set(from, new Set())
     const importsSet = this.imports.get(from)!
-    imports.forEach(imp => importsSet.add(imp))
+    imports.forEach((imp) => importsSet.add(imp))
   }
 
   protected importAll(from: string, as: string) {

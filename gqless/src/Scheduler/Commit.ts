@@ -33,7 +33,7 @@ export class Commit extends Disposable {
 
     this.addDisposer(
       accessor.onValueChange.then(unstage),
-      accessor.onResolvedChange.then(resolved => {
+      accessor.onResolvedChange.then((resolved) => {
         if (!resolved) unstage()
       })
     )
@@ -115,7 +115,7 @@ export class Commit extends Disposable {
           try {
             await promise
           } finally {
-            accessors.forEach(accessor => {
+            accessors.forEach((accessor) => {
               accessor.status = NetworkStatus.idle
             })
           }

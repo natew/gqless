@@ -26,7 +26,7 @@ export const buildSelections = (
 
   const selections = [
     includeTypename && '__typename',
-    ...tree.children.map(tree =>
+    ...tree.children.map((tree) =>
       buildSelectionTree(formatter, tree, variables)
     ),
   ].filter(Boolean)

@@ -31,7 +31,7 @@ export const User = graphql(
         <h2>{userFragment.name}</h2>
         <React.Suspense fallback="loading repos">
           <Repos>
-            {repos.map(repo => {
+            {repos.map((repo) => {
               return <Repo key={repo!.node!.nameWithOwner} repo={repo!.node!} />
             })}
           </Repos>

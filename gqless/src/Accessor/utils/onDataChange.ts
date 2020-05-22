@@ -10,7 +10,10 @@ export const onDataChange = (accessor: Accessor) => {
 
   let dispose: Function | undefined
 
-  const onValueAssociated = (value: Value | undefined, prevValue: Value | undefined,) => {
+  const onValueAssociated = (
+    value: Value | undefined,
+    prevValue: Value | undefined
+  ) => {
     dispose?.()
     dispose = undefined
 

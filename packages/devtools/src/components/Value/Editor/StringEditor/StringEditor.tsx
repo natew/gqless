@@ -15,13 +15,13 @@ export const StringEditor = observer(() => {
         disabled={editor.nulled}
         value={editor.currentValue}
         maxRows={editor.focused ? 4 : 1}
-        onChange={e => {
+        onChange={(e) => {
           editor.currentValue = e.target.value
         }}
         onFocus={() => {
           editor.focused = true
         }}
-        onBlur={e => {
+        onBlur={(e) => {
           e.target.scrollTop = 0
           editor.focused = false
         }}

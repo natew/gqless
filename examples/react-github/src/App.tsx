@@ -21,7 +21,7 @@ export const App = graphql(
         <div>
           <input
             value={username}
-            onChange={e => {
+            onChange={(e) => {
               setUsername(e.target.value)
               usernameVar.updateValue(e.target.value)
 

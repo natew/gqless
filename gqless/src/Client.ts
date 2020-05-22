@@ -46,11 +46,11 @@ export class Client<TData = any> extends Disposable {
       fragments: 'auto',
       variables: true,
     })
-    this.selection.onSelect(selection => {
+    this.selection.onSelect((selection) => {
       this.plugins.all.onSelect(selection)
     })
 
-    this.selection.onUnselect(selection => {
+    this.selection.onUnselect((selection) => {
       this.plugins.all.onUnselect(selection)
     })
   }
@@ -59,7 +59,7 @@ export class Client<TData = any> extends Disposable {
     const result = buildQuery(
       this.formatter,
       queryName,
-      ...accessors.map(accessor => accessor.selectionPath)
+      ...accessors.map((accessor) => accessor.selectionPath)
     )
 
     if (!result) return

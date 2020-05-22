@@ -9,11 +9,11 @@ export interface EditorProps {
 }
 
 const StyledNull = styled.button<{ disabled: boolean; active: boolean }>`
-  opacity: ${p => +!p.disabled};
-  background: ${p => (p.active ? 'rgb(226, 166, 58)' : 'transparent')};
+  opacity: ${(p) => +!p.disabled};
+  background: ${(p) => (p.active ? 'rgb(226, 166, 58)' : 'transparent')};
   border: 0;
   outline: 0;
-  color: ${p => (p.active ? '#000' : 'rgba(52, 63, 123,.45)')};
+  color: ${(p) => (p.active ? '#000' : 'rgba(52, 63, 123,.45)')};
   font-size: 0.7rem;
   cursor: pointer;
   border-radius: 1em;
@@ -22,9 +22,9 @@ const StyledNull = styled.button<{ disabled: boolean; active: boolean }>`
   margin-right: 0.5rem;
 
   &:hover {
-    background: ${p =>
+    background: ${(p) =>
       p.active ? 'rgb(245, 197, 111)' : 'rgba(128, 146, 245, 0.32)'};
-    color: ${p => (p.active ? '#000' : 'rgb(173, 184, 241)')};
+    color: ${(p) => (p.active ? '#000' : 'rgb(173, 184, 241)')};
   }
 `
 

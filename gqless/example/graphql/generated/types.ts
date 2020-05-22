@@ -21,8 +21,8 @@ type t_Query = FieldsType<
     m: t_O1 | t_O2 | null
     me: t_User | null
     user: FieldsTypeArg<{ id?: string | null }, t_User | null>
-    users: FieldsTypeArg<{ limit?: number | null }, (t_User)[]>
-    stringArray: ((t_String)[] | null)[]
+    users: FieldsTypeArg<{ limit?: number | null }, t_User[]>
+    stringArray: (t_String[] | null)[]
     a: t_A | null
 
     /**
@@ -33,11 +33,11 @@ type t_Query = FieldsType<
     /**
      * @deprecated use the users field instead
      */
-    getUsers: FieldsTypeArg<{ id?: string | null }, (t_User)[]>
+    getUsers: FieldsTypeArg<{ id?: string | null }, t_User[]>
     testOrUser: t_TestOrUser
     test: t_TestB | t_TestC | null
     testWithInput: FieldsTypeArg<
-      { id?: string | null; ids: (string)[]; input?: InputObj | null },
+      { id?: string | null; ids: string[]; input?: InputObj | null },
       t_Int | null
     >
   },
@@ -177,7 +177,7 @@ type t___Schema = FieldsType<
     /**
      * A list of all types supported by this server.
      */
-    types: (t___Type)[]
+    types: t___Type[]
 
     /**
      * The type that query operations will be rooted at.
@@ -197,7 +197,7 @@ type t___Schema = FieldsType<
     /**
      * A list of all directives supported by this server.
      */
-    directives: (t___Directive)[]
+    directives: t___Directive[]
   },
   Extension<'__Schema'>
 >
@@ -214,15 +214,15 @@ type t___Type = FieldsType<
     description: t_String | null
     fields: FieldsTypeArg<
       { includeDeprecated?: boolean | null },
-      (t___Field)[] | null
+      t___Field[] | null
     >
-    interfaces: (t___Type)[] | null
-    possibleTypes: (t___Type)[] | null
+    interfaces: t___Type[] | null
+    possibleTypes: t___Type[] | null
     enumValues: FieldsTypeArg<
       { includeDeprecated?: boolean | null },
-      (t___EnumValue)[] | null
+      t___EnumValue[] | null
     >
-    inputFields: (t___InputValue)[] | null
+    inputFields: t___InputValue[] | null
     ofType: t___Type | null
   },
   Extension<'__Type'>
@@ -261,7 +261,7 @@ type t___Field = FieldsType<
     __typename: t_String<'__Field'>
     name: t_String
     description: t_String | null
-    args: (t___InputValue)[]
+    args: t___InputValue[]
     type: t___Type
     isDeprecated: t_Boolean
     deprecationReason: t_String | null
@@ -312,8 +312,8 @@ type t___Directive = FieldsType<
     __typename: t_String<'__Directive'>
     name: t_String
     description: t_String | null
-    locations: (t___DirectiveLocation)[]
-    args: (t___InputValue)[]
+    locations: t___DirectiveLocation[]
+    args: t___InputValue[]
   },
   Extension<'__Directive'>
 >

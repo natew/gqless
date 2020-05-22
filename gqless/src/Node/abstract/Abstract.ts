@@ -12,7 +12,7 @@ import {
 export const getAbstractImplementation = (node: object, typename: string) => {
   if (node instanceof Abstract && typename) {
     const implementation = node.implementations.find(
-      i => i.toString() === typename
+      (i) => i.toString() === typename
     )
     invariant(implementation, `'${typename}' is not a valid subtype of ${node}`)
     return implementation

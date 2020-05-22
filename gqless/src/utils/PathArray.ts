@@ -5,6 +5,6 @@ export class PathArray<T> extends Array<T> {
   }
 
   public toString() {
-    return this.map(element => String(element)).join('.')
+    return this.map((element) => String(element)).join('.')
   }
 }

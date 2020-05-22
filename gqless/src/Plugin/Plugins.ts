@@ -18,7 +18,7 @@ export class Plugins {
   }
 
   public remove(...plugins: Plugin[]) {
-    plugins.forEach(plugin => {
+    plugins.forEach((plugin) => {
       const idx = this.plugins.indexOf(plugin)
 
       if (idx > -1) {
@@ -36,8 +36,8 @@ export class Plugins {
   >({} as any, {
     get: (_, key: keyof Plugin) => (...args: any[]) => {
       return this.plugins
-        .filter(plugin => key in plugin)
-        .map(plugin => (plugin[key] as Function)(...args))
+        .filter((plugin) => key in plugin)
+        .map((plugin) => (plugin[key] as Function)(...args))
     },
   })
 
@@ -53,7 +53,7 @@ export class Plugins {
     get: (_, key: keyof Plugin) => (...args: any[]) => (
       isCorrectValue: (value: any) => boolean
     ) => {
-      for (const plugin of this.plugins.filter(plugin => key in plugin)) {
+      for (const plugin of this.plugins.filter((plugin) => key in plugin)) {
         const value = (plugin[key] as Function)(...args)
         if (isCorrectValue(value)) return value
       }

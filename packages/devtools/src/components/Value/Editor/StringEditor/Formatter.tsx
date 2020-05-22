@@ -17,7 +17,7 @@ const Link = styled.a`
 `
 
 const Char = styled.span<{ opacity?: number }>`
-  color: rgb(203, 211, 255, ${p => p.opacity || 1});
+  color: rgb(203, 211, 255, ${(p) => p.opacity || 1});
 `
 
 export interface FormatterProps {

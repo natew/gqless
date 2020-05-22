@@ -12,7 +12,7 @@ const StyledField = styled.span<{ active: boolean }>`
   display: flex;
   align-items: center;
   font-family: Operator mono;
-  opacity: ${p => (p.active ? 1 : 0.667)};
+  opacity: ${(p) => (p.active ? 1 : 0.667)};
 `
 
 const Type = styled.span`

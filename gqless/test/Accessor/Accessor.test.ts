@@ -4,7 +4,7 @@ import { snapshotAccessor } from './helpers'
 jest.useFakeTimers()
 
 it('creates and schedules selections', () => {
-  snapshotAccessor(data => {
+  snapshotAccessor((data) => {
     data.string
     data.object
     data.object.string
@@ -15,7 +15,7 @@ it('creates and schedules selections', () => {
 })
 
 it('supports arguments', () => {
-  snapshotAccessor(data => {
+  snapshotAccessor((data) => {
     data.arrayOfObjects({ string: 'test2' })
     data.arrayOfObjects({ string: 'test3' })[0]
     data.arrayOfObjects({ string: 'test2' })[0].string
@@ -24,7 +24,7 @@ it('supports arguments', () => {
 })
 
 it('supports extensions', () => {
-  snapshotAccessor(data => {
+  snapshotAccessor((data) => {
     expect(data.object.newPropertyFunction).toMatchInlineSnapshot(`[Function]`)
     expect(data.object.newPropertyNumber).toMatchInlineSnapshot(`1234`)
 

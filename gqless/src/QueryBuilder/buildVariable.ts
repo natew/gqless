@@ -12,9 +12,14 @@ export interface ConnectedVariable {
   path?: string[]
 }
 
-export const buildVariable = ({ options }:  Formatter, variable: Variable, info?: ConnectedVariable) => {
+export const buildVariable = (
+  { options }: Formatter,
+  variable: Variable,
+  info?: ConnectedVariable
+) => {
   let name =
-    variable.name! || (options.prettify && info?.path ? camelCase(info.path) : 'v')
+    variable.name! ||
+    (options.prettify && info?.path ? camelCase(info.path) : 'v')
 
   if (info) {
     if (info.node) variable.validateNode(info.node, info.nullable)
@@ -23,7 +28,7 @@ export const buildVariable = ({ options }:  Formatter, variable: Variable, info?
       const existingVariable = info.variables.has(name)
 
       if (existingVariable) {
-        name = uniquify(name, name => info.variables!.has(name))
+        name = uniquify(name, (name) => info.variables!.has(name))
       }
 
       info.variables.set(name, variable)

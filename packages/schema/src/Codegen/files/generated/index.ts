@@ -12,7 +12,7 @@ export class IndexFile extends File {
       ${super.generate()}
 
       ${this.exportFiles
-        .map(file => {
+        .map((file) => {
           return `export * from './${file.path.replace('generated/', '')}'\n`
         })
         .join(' ')}

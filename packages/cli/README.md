@@ -11,7 +11,7 @@ Create a typed gqless client from a graphql endpoint
 - [@gqless/cli](#gqlesscli)
 - [Usage](#usage)
 - [Commands](#commands)
-  <!-- tocstop -->
+<!-- tocstop -->
 
 # Usage
 
@@ -35,33 +35,7 @@ USAGE
 
 <!-- commands -->
 
-- [`gqless generate [OUTPUT_DIR]`](#gqless-generate-output_dir)
 - [`gqless help [COMMAND]`](#gqless-help-command)
-
-## `gqless generate [OUTPUT_DIR]`
-
-Generate a client from a GraphQL endpoint
-
-```
-USAGE
-  $ gqless generate [OUTPUT_DIR]
-
-OPTIONS
-  -c, --config=config  Path to your gqless config file
-  -h, --help           show CLI help
-  -t, --typescript     output typescript (instead of javascript)
-  -u, --url=url        url to the GraphQL endpoint
-  --comments           output comments to type definitions (useful for IDE intellisense)
-
-  --header=header      Additional header to send to server for introspectionQuery. May be used multiple times to add
-                       multiple headers.
-
-EXAMPLES
-  $ gqless generate ./src/gqless -u https://example.com/graphql
-  $ gqless generate -c gqless.config.ts
-```
-
-_See code: [dist/commands/generate.js](https://github.com/samdenty/gqless/blob/v0.0.1-alpha.31/dist/commands/generate.js)_
 
 ## `gqless help [COMMAND]`
 

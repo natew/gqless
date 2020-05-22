@@ -29,7 +29,7 @@ export const buildArguments = (
     keys.sort()
 
     return keys
-      .map(key => {
+      .map((key) => {
         let keyContext: ArgContext | undefined
 
         if (context) {
@@ -97,7 +97,7 @@ export const buildArguments = (
         }
       }
 
-      return `[${arg.map(a => build(a, path, indexContext)).join(SEPARATOR)}]`
+      return `[${arg.map((a) => build(a, path, indexContext)).join(SEPARATOR)}]`
     }
 
     return `{${SPACE}${buildKeyed(arg, path, context)}${SPACE}}`

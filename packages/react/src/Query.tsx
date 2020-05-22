@@ -39,7 +39,8 @@ export const Query: React.SFC<{
         : value instanceof QueryCl
         ? [value]
         : (Array.isArray(value) ? value : [value]).map(
-            value => new QueryCl(typeof value === 'string' ? value : undefined)
+            (value) =>
+              new QueryCl(typeof value === 'string' ? value : undefined)
           )
 
     return {

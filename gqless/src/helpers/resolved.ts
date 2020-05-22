@@ -34,7 +34,7 @@ export function resolved<T>(
     const interceptor = new Interceptor()
     const nonIdleAccessors = new Set<Accessor>()
 
-    interceptor.onAccessor(accessor => {
+    interceptor.onAccessor((accessor) => {
       nonIdleAccessors.add(accessor)
     })
 
@@ -46,7 +46,7 @@ export function resolved<T>(
     }
 
     return new Promise((resolve, reject) => {
-      nonIdleAccessors.forEach(accessor => {
+      nonIdleAccessors.forEach((accessor) => {
         if (isResolved(accessor)) {
           nonIdleAccessors.delete(accessor)
           return
@@ -78,7 +78,7 @@ export function resolved<T>(
     return Promise.resolve(data) as any
   }
 
-  return new Promise<any>(resolve => {
+  return new Promise<any>((resolve) => {
     // TODO: Support for promise reject
     accessor.onStatusChange(() => {
       if (isResolved(accessor)) resolve(accessor.data)

@@ -27,7 +27,7 @@ it('handles thenables', async () => {
 
 it('supports filtering', () => {
   const callback = jest.fn()
-  const onlyStrings = onEvent.filter(value => typeof value === 'string')
+  const onlyStrings = onEvent.filter((value) => typeof value === 'string')
 
   onlyStrings(callback)
 

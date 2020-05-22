@@ -5,14 +5,15 @@ export class Disposable {
 
   public addDisposer(...disposers: any[]) {
     disposers.forEach(
-      dispose => typeof dispose === 'function' && this.disposers.add(dispose)
+      (dispose) => typeof dispose === 'function' && this.disposers.add(dispose)
     )
     return () => this.deleteDiposer(...disposers)
   }
 
   public deleteDiposer(...disposers: any[]) {
     disposers.forEach(
-      dispose => typeof dispose === 'function' && this.disposers.delete(dispose)
+      (dispose) =>
+        typeof dispose === 'function' && this.disposers.delete(dispose)
     )
   }
 
@@ -20,6 +21,6 @@ export class Disposable {
     if (this.disposed) return
 
     this.disposed = true
-    this.disposers.forEach(dispose => dispose.call(this))
+    this.disposers.forEach((dispose) => dispose.call(this))
   }
 }

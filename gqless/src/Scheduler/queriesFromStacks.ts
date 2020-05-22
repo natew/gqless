@@ -28,7 +28,7 @@ export const queriesFromStacks = <T extends any>(stacks: T[][]) => {
   }
 
   // Iterate stacks and caculate weights
-  stacks.forEach(stack => {
+  stacks.forEach((stack) => {
     stack.forEach((query, i) => {
       const amount = stack.length - i
 
@@ -63,7 +63,7 @@ export const queriesFromStacks = <T extends any>(stacks: T[][]) => {
   const finalQueries = new Set()
   const queriesCount = new Map()
 
-  const possibleQueries = stacks.map(stack => {
+  const possibleQueries = stacks.map((stack) => {
     let lowestRating: number | undefined
     let possibleQueries: T[] = []
 
@@ -95,7 +95,7 @@ export const queriesFromStacks = <T extends any>(stacks: T[][]) => {
     if (possibleQueries.length === 1) {
       finalQueries.add(possibleQueries[0])
     } else {
-      possibleQueries.forEach(query => {
+      possibleQueries.forEach((query) => {
         queriesCount.set(query, (queriesCount.get(query) || 0) + 1)
       })
     }
@@ -104,7 +104,7 @@ export const queriesFromStacks = <T extends any>(stacks: T[][]) => {
   })
 
   // Works for 80% of cases, but it depends on the order the entries are passed in
-  return possibleQueries.map(possibleQueries => {
+  return possibleQueries.map((possibleQueries) => {
     let highestCount: number | undefined
     let chosenQuery: T | undefined
 

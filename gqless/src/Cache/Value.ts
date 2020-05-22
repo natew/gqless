@@ -31,7 +31,7 @@ export class Value<TNode extends DataTrait = DataTrait> {
       referencedKeys.add(key)
 
       this.onSet
-        .filter(k => k === key)
+        .filter((k) => k === key)
         .then(() => {
           referencedKeys.delete(key)
           if (referencedKeys.size) return
@@ -88,7 +88,6 @@ export class Value<TNode extends DataTrait = DataTrait> {
     key = String(key)
     const prevValue = (this.data as any)?.[key]
     if (prevValue === value) return
-
     ;(this.data as any)[key] = value
     this.onSet.emit(key, value)
   }
@@ -99,14 +98,14 @@ export class Value<TNode extends DataTrait = DataTrait> {
     if (this.node instanceof ArrayNode) {
       if (!this.data) return null
 
-      return (this.data as any[]).map(value => value.toJSON())
+      return (this.data as any[]).map((value) => value.toJSON())
     }
 
     if (this.node instanceof ObjectNode) {
       if (!this.data) return null
 
       const obj: any = {
-        __typename: this.node.name
+        __typename: this.node.name,
       }
 
       Object.entries(this.data).forEach(([key, value]) => {

@@ -11,7 +11,7 @@ const headersArrayToObject = (
 ): Record<string, string> | undefined => {
   if (!arr) return
   return arr
-    .map(val => JSON.parse(val))
+    .map((val) => JSON.parse(val))
     .reduce((pre, next) => ({ ...pre, ...next }), {})
 }
 
@@ -33,7 +33,7 @@ export default class Generate extends Command {
 
     header: flags.string({
       multiple: true,
-      parse: header => {
+      parse: (header) => {
         const separatorIndex = header.indexOf(':')
         const key = header.substring(0, separatorIndex).trim()
         const value = header.substring(separatorIndex + 1).trim()

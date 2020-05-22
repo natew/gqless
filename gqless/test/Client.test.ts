@@ -14,7 +14,7 @@ it('fetches values', async () => {
 
   client.query.string
   client.query.arrayOfString[0]
-  client.query.arrayOfObjects.forEach(object => {
+  client.query.arrayOfObjects.forEach((object) => {
     object.string
   })
 

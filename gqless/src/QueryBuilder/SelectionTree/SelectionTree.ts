@@ -31,7 +31,7 @@ export class SelectionTree<TSelection extends Selection = Selection> {
       const existingName = this.allFragments.get(fragment)
       if (existingName) return this.duplicatedFragments.get(existingName)
 
-      const name = uniquify(fragment.toString(), name =>
+      const name = uniquify(fragment.toString(), (name) =>
         this.duplicatedFragments.has(name)
       )
 
@@ -64,6 +64,6 @@ export class SelectionTree<TSelection extends Selection = Selection> {
   }
 
   public toString() {
-    return this.path.map(t => t.selection.toString()).join('.')
+    return this.path.map((t) => t.selection.toString()).join('.')
   }
 }

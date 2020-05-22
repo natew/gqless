@@ -44,7 +44,7 @@ export class SchemaFile extends File {
     return `{
       ${Object.values(this.codegen.schema.types)
         .map(
-          type => `get ${type.name}() {
+          (type) => `get ${type.name}() {
             return ${this.generateNode(type)}
           }`
         )
@@ -82,7 +82,7 @@ export class SchemaFile extends File {
 
         return `new ${ObjectNode.name}({
           ${Object.values(type.fields)
-            .map(field => this.generateFieldGetter(field))
+            .map((field) => this.generateFieldGetter(field))
             .join(',')}
         }, { name: ${JSON.stringify(type.name)}, extension: ${this.getExtension(
           type.name
@@ -94,10 +94,10 @@ export class SchemaFile extends File {
 
         return `new ${InterfaceNode.name}({
           ${Object.values(type.fields)
-            .map(field => this.generateFieldGetter(field))
+            .map((field) => this.generateFieldGetter(field))
             .join(',')}
         },
-        [${type.possibleTypes.map(type => this.getNode(type)).join(',')}],
+        [${type.possibleTypes.map((type) => this.getNode(type)).join(',')}],
         { name: ${JSON.stringify(type.name)}, extension: ${this.getExtension(
           type.name
         )} })`
@@ -106,7 +106,7 @@ export class SchemaFile extends File {
       case 'UNION': {
         this.import(CORE, UnionNode.name)
 
-        return `new ${UnionNode.name}([${type.possibleTypes.map(type =>
+        return `new ${UnionNode.name}([${type.possibleTypes.map((type) =>
           this.getNode(type)
         )}])`
       }
@@ -124,7 +124,7 @@ export class SchemaFile extends File {
 
         return `new ${InputNode.name}({
           ${Object.values(type.inputFields)
-            .map(field => {
+            .map((field) => {
               this.import(CORE, InputNodeField.name)
 
               return `get ${field.name}() {
@@ -164,7 +164,7 @@ export class SchemaFile extends File {
 
     this.import(CORE, Arguments.name)
 
-    const argsRequired = !Object.values(args).find(arg => arg.nullable)
+    const argsRequired = !Object.values(args).find((arg) => arg.nullable)
       ? ', true'
       : ''
 

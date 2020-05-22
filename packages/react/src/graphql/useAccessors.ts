@@ -12,8 +12,8 @@ export const useAccessors = (stack: StackContext) => {
 
   useEffect(() => {
     return () => {
-      accessorDisposers.forEach(disposers => {
-        disposers.forEach(dispose => dispose())
+      accessorDisposers.forEach((disposers) => {
+        disposers.forEach((dispose) => dispose())
       })
     }
   }, [])
@@ -25,7 +25,7 @@ export const useAccessors = (stack: StackContext) => {
     accessors,
     updateAccessors(): Promise<void> | void {
       // Find all the new accessors and add to Set
-      interceptor.interceptedAccessors.forEach(accessor => {
+      interceptor.interceptedAccessors.forEach((accessor) => {
         if (accessors.has(accessor)) return
 
         accessors.add(accessor)
@@ -50,7 +50,7 @@ export const useAccessors = (stack: StackContext) => {
 
       const nonIdleAccessors = new Set<Accessor>()
 
-      accessors.forEach(accessor => {
+      accessors.forEach((accessor) => {
         // Locate accessors currently being fetched,
         // and add to Set
         if (interceptor.interceptedAccessors.has(accessor)) {
@@ -66,14 +66,14 @@ export const useAccessors = (stack: StackContext) => {
         const disposers = accessorDisposers.get(accessor)
         if (disposers) {
           accessorDisposers.delete(accessor)
-          disposers.forEach(dispose => dispose())
+          disposers.forEach((dispose) => dispose())
         }
         accessors.delete(accessor)
       })
 
       if (nonIdleAccessors.size) {
-        return new Promise(resolve => {
-          nonIdleAccessors.forEach(accessor => {
+        return new Promise((resolve) => {
+          nonIdleAccessors.forEach((accessor) => {
             accessor.onStatusChange.then(() => {
               nonIdleAccessors.delete(accessor)
               if (!nonIdleAccessors.size) resolve()

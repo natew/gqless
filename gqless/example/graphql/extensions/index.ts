@@ -35,7 +35,7 @@ export const User /*: Extension<g.User>*/ = {
   },
 }
 
-export const Query /*: Extension<g.User>*/ = query => {
+export const Query /*: Extension<g.User>*/ = (query) => {
   return {
     whatIsMyName() {
       return query.me.name

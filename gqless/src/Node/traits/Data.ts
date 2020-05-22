@@ -14,7 +14,7 @@ export type DataContext<TNode extends DataTrait = DataTrait> = {
 export const interceptAccessor = (ctx: DataContext) => {
   if (!ctx.accessor) return
 
-  accessorInterceptors.forEach(intercept => intercept(ctx.accessor!))
+  accessorInterceptors.forEach((intercept) => intercept(ctx.accessor!))
 }
 
 export const getExtensions = (ctx: DataContext) => {

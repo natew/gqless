@@ -15,7 +15,7 @@ export class FragmentAccessor<
     super(parent, fragment)
 
     if (fragment.node !== parent.node) {
-      this.parent.onValueChange(value => {
+      this.parent.onValueChange((value) => {
         this.resolved =
           this.parent.resolved && (!value || value.node === fragment.node)
       })
@@ -23,7 +23,9 @@ export class FragmentAccessor<
 
     // Sync value with parent
     // (only if the node is the same)
-    syncValue(this, value => (value.node === fragment.node ? value : undefined))
+    syncValue(this, (value) =>
+      value.node === fragment.node ? value : undefined
+    )
     this.loadExtensions()
   }
 

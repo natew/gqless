@@ -18,7 +18,7 @@ export class Transaction {
     const callbacks = Array.from(this.callbacks)
     this.callbacks.clear()
 
-    callbacks.forEach(callback => callback())
+    callbacks.forEach((callback) => callback())
   }
 
   public onComplete(callback: Function) {

@@ -87,11 +87,11 @@ type t_Query = FieldsType<
      */
     marketplaceCategories: FieldsTypeArg<
       {
-        includeCategories?: (string)[] | null
+        includeCategories?: string[] | null
         excludeEmpty?: boolean | null
         excludeSubcategories?: boolean | null
       },
-      (t_MarketplaceCategory)[]
+      t_MarketplaceCategory[]
     >
 
     /**
@@ -322,7 +322,7 @@ type t_Query = FieldsType<
      * Lookup nodes by a list of IDs.
      */
     nodes: FieldsTypeArg<
-      { ids: (string)[] },
+      { ids: string[] },
       (
         | t_AddedToProjectEvent
         | t_App
@@ -497,7 +497,8 @@ type t_Query = FieldsType<
         | t_UserBlockedEvent
         | t_UserContentEdit
         | t_UserStatus
-        | null)[]
+        | null
+      )[]
     >
 
     /**
@@ -607,7 +608,7 @@ type t_Query = FieldsType<
         orderBy?: SecurityVulnerabilityOrder | null
         ecosystem?: SecurityAdvisoryEcosystem | null
         package?: string | null
-        severities?: (SecurityAdvisorySeverity)[] | null
+        severities?: SecurityAdvisorySeverity[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -1054,8 +1055,8 @@ type t_User = FieldsType<
     issues: FieldsTypeArg<
       {
         orderBy?: IssueOrder | null
-        labels?: (string)[] | null
-        states?: (IssueState)[] | null
+        labels?: string[] | null
+        states?: IssueState[] | null
         filterBy?: IssueFilters | null
         after?: string | null
         before?: string | null
@@ -1108,7 +1109,7 @@ type t_User = FieldsType<
      */
     pinnableItems: FieldsTypeArg<
       {
-        types?: (PinnableItemType)[] | null
+        types?: PinnableItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -1122,7 +1123,7 @@ type t_User = FieldsType<
      */
     pinnedItems: FieldsTypeArg<
       {
-        types?: (PinnableItemType)[] | null
+        types?: PinnableItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -1167,7 +1168,7 @@ type t_User = FieldsType<
       {
         orderBy?: ProjectOrder | null
         search?: string | null
-        states?: (ProjectState)[] | null
+        states?: ProjectState[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -1204,8 +1205,8 @@ type t_User = FieldsType<
      */
     pullRequests: FieldsTypeArg<
       {
-        states?: (PullRequestState)[] | null
-        labels?: (string)[] | null
+        states?: PullRequestState[] | null
+        labels?: string[] | null
         headRefName?: string | null
         baseRefName?: string | null
         orderBy?: IssueOrder | null
@@ -1816,7 +1817,7 @@ type t_Repository = FieldsType<
      */
     deployments: FieldsTypeArg<
       {
-        environments?: (string)[] | null
+        environments?: string[] | null
         orderBy?: DeploymentOrder | null
         after?: string | null
         before?: string | null
@@ -1934,8 +1935,8 @@ type t_Repository = FieldsType<
     issues: FieldsTypeArg<
       {
         orderBy?: IssueOrder | null
-        labels?: (string)[] | null
-        states?: (IssueState)[] | null
+        labels?: string[] | null
+        states?: IssueState[] | null
         filterBy?: IssueFilters | null
         after?: string | null
         before?: string | null
@@ -2021,7 +2022,7 @@ type t_Repository = FieldsType<
         before?: string | null
         first?: number | null
         last?: number | null
-        states?: (MilestoneState)[] | null
+        states?: MilestoneState[] | null
         orderBy?: MilestoneOrder | null
       },
       t_MilestoneConnection | null
@@ -2082,7 +2083,7 @@ type t_Repository = FieldsType<
       {
         orderBy?: ProjectOrder | null
         search?: string | null
-        states?: (ProjectState)[] | null
+        states?: ProjectState[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -2111,8 +2112,8 @@ type t_Repository = FieldsType<
      */
     pullRequests: FieldsTypeArg<
       {
-        states?: (PullRequestState)[] | null
-        labels?: (string)[] | null
+        states?: PullRequestState[] | null
+        labels?: string[] | null
         headRefName?: string | null
         baseRefName?: string | null
         orderBy?: IssueOrder | null
@@ -2961,7 +2962,7 @@ type t_Issue = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -3015,7 +3016,7 @@ type t_Issue = FieldsType<
       {
         since?: any | null
         skip?: number | null
-        itemTypes?: (IssueTimelineItemsItemType)[] | null
+        itemTypes?: IssueTimelineItemsItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -3070,7 +3071,7 @@ type t_Issue = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -3407,8 +3408,8 @@ type t_Label = FieldsType<
     issues: FieldsTypeArg<
       {
         orderBy?: IssueOrder | null
-        labels?: (string)[] | null
-        states?: (IssueState)[] | null
+        labels?: string[] | null
+        states?: IssueState[] | null
         filterBy?: IssueFilters | null
         after?: string | null
         before?: string | null
@@ -3428,8 +3429,8 @@ type t_Label = FieldsType<
      */
     pullRequests: FieldsTypeArg<
       {
-        states?: (PullRequestState)[] | null
-        labels?: (string)[] | null
+        states?: PullRequestState[] | null
+        labels?: string[] | null
         headRefName?: string | null
         baseRefName?: string | null
         orderBy?: IssueOrder | null
@@ -3547,11 +3548,11 @@ type t_IssueState = EnumType<'OPEN' | 'CLOSED'>
 export type IssueFilters = {
   assignee: string | null
   createdBy: string | null
-  labels: (string)[] | null
+  labels: string[] | null
   mentioned: string | null
   milestone: string | null
   since: any | null
-  states: (IssueState)[] | null
+  states: IssueState[] | null
   viewerSubscribed: boolean | null
 }
 
@@ -3933,7 +3934,7 @@ type t_PullRequest = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -4005,7 +4006,7 @@ type t_PullRequest = FieldsType<
         before?: string | null
         first?: number | null
         last?: number | null
-        states?: (PullRequestReviewState)[] | null
+        states?: PullRequestReviewState[] | null
         author?: string | null
       },
       t_PullRequestReviewConnection | null
@@ -4043,7 +4044,7 @@ type t_PullRequest = FieldsType<
       {
         since?: any | null
         skip?: number | null
-        itemTypes?: (PullRequestTimelineItemsItemType)[] | null
+        itemTypes?: PullRequestTimelineItemsItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -4103,7 +4104,7 @@ type t_PullRequest = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -4928,7 +4929,7 @@ type t_Organization = FieldsType<
      */
     pinnableItems: FieldsTypeArg<
       {
-        types?: (PinnableItemType)[] | null
+        types?: PinnableItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -4942,7 +4943,7 @@ type t_Organization = FieldsType<
      */
     pinnedItems: FieldsTypeArg<
       {
-        types?: (PinnableItemType)[] | null
+        types?: PinnableItemType[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -4987,7 +4988,7 @@ type t_Organization = FieldsType<
       {
         orderBy?: ProjectOrder | null
         search?: string | null
-        states?: (ProjectState)[] | null
+        states?: ProjectState[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -5126,7 +5127,7 @@ type t_Organization = FieldsType<
         privacy?: TeamPrivacy | null
         role?: TeamRole | null
         query?: string | null
-        userLogins?: (string)[] | null
+        userLogins?: string[] | null
         orderBy?: TeamOrder | null
         ldapMapped?: boolean | null
         rootTeamsOnly?: boolean | null
@@ -5316,8 +5317,8 @@ type t_Ref = FieldsType<
      */
     associatedPullRequests: FieldsTypeArg<
       {
-        states?: (PullRequestState)[] | null
-        labels?: (string)[] | null
+        states?: PullRequestState[] | null
+        labels?: string[] | null
         headRefName?: string | null
         baseRefName?: string | null
         orderBy?: IssueOrder | null
@@ -5547,7 +5548,7 @@ type t_Commit = FieldsType<
      */
     deployments: FieldsTypeArg<
       {
-        environments?: (string)[] | null
+        environments?: string[] | null
         orderBy?: DeploymentOrder | null
         after?: string | null
         before?: string | null
@@ -5733,7 +5734,7 @@ type t_Tree = FieldsType<
     /**
      * A list of tree entries.
      */
-    entries: (t_TreeEntry)[] | null
+    entries: t_TreeEntry[] | null
     id: t_ID
 
     /**
@@ -5922,7 +5923,7 @@ type t_CommitHistoryConnection = FieldsType<
  * @name CommitAuthor
  * @type INPUT_OBJECT
  */
-export type CommitAuthor = { id: string | null; emails: (string)[] | null }
+export type CommitAuthor = { id: string | null; emails: string[] | null }
 
 /**
  * @name CommitCommentConnection
@@ -6086,7 +6087,7 @@ type t_CommitComment = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -6159,7 +6160,7 @@ type t_CommitComment = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -6757,7 +6758,7 @@ type t_Topic = FieldsType<
      * first. Returns up to 10 Topics.
      *
      */
-    relatedTopics: FieldsTypeArg<{ first?: number | null }, (t_Topic)[]>
+    relatedTopics: FieldsTypeArg<{ first?: number | null }, t_Topic[]>
 
     /**
      * A list of users who have starred this starrable.
@@ -6904,7 +6905,7 @@ type t_Status = FieldsType<
     /**
      * The individual status contexts for this commit.
      */
-    contexts: (t_StatusContext)[]
+    contexts: t_StatusContext[]
     id: t_ID
 
     /**
@@ -7053,7 +7054,7 @@ type t_Blame = FieldsType<
     /**
      * The list of ranges from a Git blame.
      */
-    ranges: (t_BlameRange)[]
+    ranges: t_BlameRange[]
   },
   Extension<'Blame'>
 >
@@ -8707,7 +8708,7 @@ type t_GistComment = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -9359,7 +9360,7 @@ type t_IssueComment = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -9432,7 +9433,7 @@ type t_IssueComment = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -9627,7 +9628,7 @@ type t_Enterprise = FieldsType<
      */
     members: FieldsTypeArg<
       {
-        organizationLogins?: (string)[] | null
+        organizationLogins?: string[] | null
         query?: string | null
         orderBy?: EnterpriseMemberOrder | null
         role?: EnterpriseUserAccountMembershipRole | null
@@ -11259,7 +11260,7 @@ type t_Team = FieldsType<
     childTeams: FieldsTypeArg<
       {
         orderBy?: TeamOrder | null
-        userLogins?: (string)[] | null
+        userLogins?: string[] | null
         immediateOnly?: boolean | null
         after?: string | null
         before?: string | null
@@ -11907,7 +11908,7 @@ type t_TeamDiscussion = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -11990,7 +11991,7 @@ type t_TeamDiscussion = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -12157,7 +12158,7 @@ type t_TeamDiscussionComment = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -12220,7 +12221,7 @@ type t_TeamDiscussionComment = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -12605,7 +12606,7 @@ type t_EnterpriseIdentityProvider = FieldsType<
     /**
      * Recovery codes that can be used by admins to access the enterprise if the identity provider is unavailable.
      */
-    recoveryCodes: (t_String)[] | null
+    recoveryCodes: t_String[] | null
 
     /**
      * The signature algorithm used to sign SAML requests for the identity provider.
@@ -15375,7 +15376,7 @@ type t_OrgRemoveMemberAuditEntry = FieldsType<
     /**
      * The types of membership the member has with the organization.
      */
-    membershipTypes: (t_OrgRemoveMemberAuditEntryMembershipType)[] | null
+    membershipTypes: t_OrgRemoveMemberAuditEntryMembershipType[] | null
 
     /**
      * The corresponding operation type for the action
@@ -15506,7 +15507,7 @@ type t_OrgRemoveOutsideCollaboratorAuditEntry = FieldsType<
      * The types of membership the outside collaborator has with the organization.
      */
     membershipTypes:
-      | (t_OrgRemoveOutsideCollaboratorAuditEntryMembershipType)[]
+      | t_OrgRemoveOutsideCollaboratorAuditEntryMembershipType[]
       | null
 
     /**
@@ -15666,7 +15667,7 @@ type t_OrgRestoreMemberAuditEntry = FieldsType<
     /**
      * Restored organization membership objects.
      */
-    restoredMemberships: (t_OrgRestoreMemberAuditEntryMembership)[] | null
+    restoredMemberships: t_OrgRestoreMemberAuditEntryMembership[] | null
 
     /**
      * The number of restored memberships.
@@ -20404,8 +20405,8 @@ type t_Milestone = FieldsType<
     issues: FieldsTypeArg<
       {
         orderBy?: IssueOrder | null
-        labels?: (string)[] | null
-        states?: (IssueState)[] | null
+        labels?: string[] | null
+        states?: IssueState[] | null
         filterBy?: IssueFilters | null
         after?: string | null
         before?: string | null
@@ -20425,8 +20426,8 @@ type t_Milestone = FieldsType<
      */
     pullRequests: FieldsTypeArg<
       {
-        states?: (PullRequestState)[] | null
-        labels?: (string)[] | null
+        states?: PullRequestState[] | null
+        labels?: string[] | null
         headRefName?: string | null
         baseRefName?: string | null
         orderBy?: IssueOrder | null
@@ -20706,7 +20707,7 @@ type t_PullRequestReviewComment = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -20789,7 +20790,7 @@ type t_PullRequestReviewComment = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -20920,7 +20921,7 @@ type t_PullRequestReview = FieldsType<
     /**
      * A list of reactions grouped by content left on the subject.
      */
-    reactionGroups: (t_ReactionGroup)[] | null
+    reactionGroups: t_ReactionGroup[] | null
 
     /**
      * A list of Reactions left on the Issue.
@@ -20998,7 +20999,7 @@ type t_PullRequestReview = FieldsType<
     /**
      * Reasons why the current viewer can not update this comment.
      */
-    viewerCannotUpdateReasons: (t_CommentCannotUpdateReason)[]
+    viewerCannotUpdateReasons: t_CommentCannotUpdateReason[]
 
     /**
      * Did the viewer author this comment.
@@ -23515,7 +23516,8 @@ type t_Hovercard = FieldsType<
       | t_OrganizationTeamsHovercardContext
       | t_OrganizationsHovercardContext
       | t_ReviewStatusHovercardContext
-      | t_ViewerHovercardContext)[]
+      | t_ViewerHovercardContext
+    )[]
   },
   Extension<'Hovercard'>
 >
@@ -24494,7 +24496,7 @@ type t_RepositoryCollaboratorEdge = FieldsType<
     /**
      * A list of sources for the user's access to the repository.
      */
-    permissionSources: (t_PermissionSource)[] | null
+    permissionSources: t_PermissionSource[] | null
   },
   Extension<'RepositoryCollaboratorEdge'>
 >
@@ -24726,7 +24728,7 @@ type t_SecurityAdvisory = FieldsType<
     /**
      * A list of identifiers for this advisory
      */
-    identifiers: (t_SecurityAdvisoryIdentifier)[]
+    identifiers: t_SecurityAdvisoryIdentifier[]
 
     /**
      * The organization that originated the advisory
@@ -24741,7 +24743,7 @@ type t_SecurityAdvisory = FieldsType<
     /**
      * A list of references for this advisory
      */
-    references: (t_SecurityAdvisoryReference)[]
+    references: t_SecurityAdvisoryReference[]
 
     /**
      * The severity of the advisory
@@ -24766,7 +24768,7 @@ type t_SecurityAdvisory = FieldsType<
         orderBy?: SecurityVulnerabilityOrder | null
         ecosystem?: SecurityAdvisoryEcosystem | null
         package?: string | null
-        severities?: (SecurityAdvisorySeverity)[] | null
+        severities?: SecurityAdvisorySeverity[] | null
         after?: string | null
         before?: string | null
         first?: number | null
@@ -25121,7 +25123,7 @@ type t_ContributionsCollection = FieldsType<
      */
     commitContributionsByRepository: FieldsTypeArg<
       { maxRepositories?: number | null },
-      (t_CommitContributionsByRepository)[]
+      t_CommitContributionsByRepository[]
     >
 
     /**
@@ -25132,7 +25134,7 @@ type t_ContributionsCollection = FieldsType<
     /**
      * The years the user has been making contributions with the most recent year first.
      */
-    contributionYears: (t_Int)[]
+    contributionYears: t_Int[]
 
     /**
      * Determine if this collection's time span ends in the current month.
@@ -25210,7 +25212,7 @@ type t_ContributionsCollection = FieldsType<
         excludeFirst?: boolean | null
         excludePopular?: boolean | null
       },
-      (t_IssueContributionsByRepository)[]
+      t_IssueContributionsByRepository[]
     >
 
     /**
@@ -25276,7 +25278,7 @@ type t_ContributionsCollection = FieldsType<
         excludeFirst?: boolean | null
         excludePopular?: boolean | null
       },
-      (t_PullRequestContributionsByRepository)[]
+      t_PullRequestContributionsByRepository[]
     >
 
     /**
@@ -25298,7 +25300,7 @@ type t_ContributionsCollection = FieldsType<
      */
     pullRequestReviewContributionsByRepository: FieldsTypeArg<
       { maxRepositories?: number | null },
-      (t_PullRequestReviewContributionsByRepository)[]
+      t_PullRequestReviewContributionsByRepository[]
     >
 
     /**
@@ -25781,7 +25783,7 @@ type t_ContributionCalendar = FieldsType<
     /**
      * A list of hex color codes used in this calendar. The darker the color, the more contributions it represents.
      */
-    colors: (t_String)[]
+    colors: t_String[]
 
     /**
      * Determine if the color set was chosen because it's currently Halloween.
@@ -25791,7 +25793,7 @@ type t_ContributionCalendar = FieldsType<
     /**
      * A list of the months of contributions in this calendar.
      */
-    months: (t_ContributionCalendarMonth)[]
+    months: t_ContributionCalendarMonth[]
 
     /**
      * The count of total contributions in the calendar.
@@ -25801,7 +25803,7 @@ type t_ContributionCalendar = FieldsType<
     /**
      * A list of the weeks of contributions in this calendar.
      */
-    weeks: (t_ContributionCalendarWeek)[]
+    weeks: t_ContributionCalendarWeek[]
   },
   Extension<'ContributionCalendar'>
 >
@@ -25817,7 +25819,7 @@ type t_ContributionCalendarWeek = FieldsType<
     /**
      * The days of contributions in this week.
      */
-    contributionDays: (t_ContributionCalendarDay)[]
+    contributionDays: t_ContributionCalendarDay[]
 
     /**
      * The date of the earliest square in this week.
@@ -26812,7 +26814,7 @@ type t_TextMatch = FieldsType<
     /**
      * Highlights within the matched fragment.
      */
-    highlights: (t_TextMatchHighlight)[]
+    highlights: t_TextMatchHighlight[]
 
     /**
      * The property matched on.
@@ -26876,17 +26878,17 @@ type t_GitHubMetadata = FieldsType<
     /**
      * IP addresses that users connect to for git operations
      */
-    gitIpAddresses: (t_String)[] | null
+    gitIpAddresses: t_String[] | null
 
     /**
      * IP addresses that service hooks are sent from
      */
-    hookIpAddresses: (t_String)[] | null
+    hookIpAddresses: t_String[] | null
 
     /**
      * IP addresses that the importer connects from
      */
-    importerIpAddresses: (t_String)[] | null
+    importerIpAddresses: t_String[] | null
 
     /**
      * Whether or not users are verified
@@ -26896,7 +26898,7 @@ type t_GitHubMetadata = FieldsType<
     /**
      * IP addresses for GitHub Pages' A records
      */
-    pagesIpAddresses: (t_String)[] | null
+    pagesIpAddresses: t_String[] | null
   },
   Extension<'GitHubMetadata'>
 >
@@ -28224,7 +28226,7 @@ export type CreateProjectInput = {
   name: string
   body: string | null
   template: ProjectTemplate | null
-  repositoryIds: (string)[] | null
+  repositoryIds: string[] | null
   clientMutationId: string | null
 }
 
@@ -28352,7 +28354,7 @@ export type ImportProjectInput = {
   name: string
   body: string | null
   public: boolean | null
-  columnImports: (ProjectColumnImport)[]
+  columnImports: ProjectColumnImport[]
   clientMutationId: string | null
 }
 
@@ -28363,7 +28365,7 @@ export type ImportProjectInput = {
 export type ProjectColumnImport = {
   columnName: string
   position: number
-  issues: (ProjectCardImport)[] | null
+  issues: ProjectCardImport[] | null
 }
 
 /**
@@ -28865,7 +28867,7 @@ type t_AddAssigneesToAssignablePayload = FieldsType<
  */
 export type AddAssigneesToAssignableInput = {
   assignableId: string
-  assigneeIds: (string)[]
+  assigneeIds: string[]
   clientMutationId: string | null
 }
 
@@ -28896,7 +28898,7 @@ type t_RemoveAssigneesFromAssignablePayload = FieldsType<
  */
 export type RemoveAssigneesFromAssignableInput = {
   assignableId: string
-  assigneeIds: (string)[]
+  assigneeIds: string[]
   clientMutationId: string | null
 }
 
@@ -28927,7 +28929,7 @@ type t_AddLabelsToLabelablePayload = FieldsType<
  */
 export type AddLabelsToLabelableInput = {
   labelableId: string
-  labelIds: (string)[]
+  labelIds: string[]
   clientMutationId: string | null
 }
 
@@ -28960,10 +28962,10 @@ export type CreateIssueInput = {
   repositoryId: string
   title: string
   body: string | null
-  assigneeIds: (string)[] | null
+  assigneeIds: string[] | null
   milestoneId: string | null
-  labelIds: (string)[] | null
-  projectIds: (string)[] | null
+  labelIds: string[] | null
+  projectIds: string[] | null
   clientMutationId: string | null
 }
 
@@ -29024,7 +29026,7 @@ type t_RemoveLabelsFromLabelablePayload = FieldsType<
  */
 export type RemoveLabelsFromLabelableInput = {
   labelableId: string
-  labelIds: (string)[]
+  labelIds: string[]
   clientMutationId: string | null
 }
 
@@ -29173,11 +29175,11 @@ export type UpdateIssueInput = {
   id: string
   title: string | null
   body: string | null
-  assigneeIds: (string)[] | null
+  assigneeIds: string[] | null
   milestoneId: string | null
-  labelIds: (string)[] | null
+  labelIds: string[] | null
   state: IssueState | null
-  projectIds: (string)[] | null
+  projectIds: string[] | null
   clientMutationId: string | null
 }
 
@@ -29293,10 +29295,10 @@ export type UpdatePullRequestInput = {
   body: string | null
   state: PullRequestUpdateState | null
   maintainerCanModify: boolean | null
-  assigneeIds: (string)[] | null
+  assigneeIds: string[] | null
   milestoneId: string | null
-  labelIds: (string)[] | null
-  projectIds: (string)[] | null
+  labelIds: string[] | null
+  projectIds: string[] | null
   clientMutationId: string | null
 }
 
@@ -30007,7 +30009,7 @@ export type CreateEnterpriseOrganizationInput = {
   login: string
   profileName: string
   billingEmail: string
-  adminLogins: (string)[]
+  adminLogins: string[]
   clientMutationId: string | null
 }
 
@@ -30706,8 +30708,8 @@ type t_RequestReviewsPayload = FieldsType<
  */
 export type RequestReviewsInput = {
   pullRequestId: string
-  userIds: (string)[] | null
-  teamIds: (string)[] | null
+  userIds: string[] | null
+  teamIds: string[] | null
   union: boolean | null
   clientMutationId: string | null
 }
@@ -31102,7 +31104,7 @@ type t_UpdateTopicsPayload = FieldsType<
     /**
      * Names of the provided topics that are not valid.
      */
-    invalidTopicNames: (t_String)[] | null
+    invalidTopicNames: t_String[] | null
 
     /**
      * The updated repository.
@@ -31118,7 +31120,7 @@ type t_UpdateTopicsPayload = FieldsType<
  */
 export type UpdateTopicsInput = {
   repositoryId: string
-  topicNames: (string)[]
+  topicNames: string[]
   clientMutationId: string | null
 }
 
@@ -31339,10 +31341,10 @@ export type CreateBranchProtectionRuleInput = {
   requiresCodeOwnerReviews: boolean | null
   dismissesStaleReviews: boolean | null
   restrictsReviewDismissals: boolean | null
-  reviewDismissalActorIds: (string)[] | null
+  reviewDismissalActorIds: string[] | null
   restrictsPushes: boolean | null
-  pushActorIds: (string)[] | null
-  requiredStatusCheckContexts: (string)[] | null
+  pushActorIds: string[] | null
+  requiredStatusCheckContexts: string[] | null
   clientMutationId: string | null
 }
 
@@ -31383,10 +31385,10 @@ export type UpdateBranchProtectionRuleInput = {
   requiresCodeOwnerReviews: boolean | null
   dismissesStaleReviews: boolean | null
   restrictsReviewDismissals: boolean | null
-  reviewDismissalActorIds: (string)[] | null
+  reviewDismissalActorIds: string[] | null
   restrictsPushes: boolean | null
-  pushActorIds: (string)[] | null
-  requiredStatusCheckContexts: (string)[] | null
+  pushActorIds: string[] | null
+  requiredStatusCheckContexts: string[] | null
   clientMutationId: string | null
 }
 
@@ -31585,7 +31587,7 @@ type t___Schema = FieldsType<
     /**
      * A list of all directives supported by this server.
      */
-    directives: (t___Directive)[]
+    directives: t___Directive[]
 
     /**
      * If this server supports mutation, the type that mutation operations will be rooted at.
@@ -31605,7 +31607,7 @@ type t___Schema = FieldsType<
     /**
      * A list of all types supported by this server.
      */
-    types: (t___Type)[]
+    types: t___Type[]
   },
   Extension<'__Schema'>
 >
@@ -31620,18 +31622,18 @@ type t___Type = FieldsType<
     description: t_String | null
     enumValues: FieldsTypeArg<
       { includeDeprecated?: boolean | null },
-      (t___EnumValue)[] | null
+      t___EnumValue[] | null
     >
     fields: FieldsTypeArg<
       { includeDeprecated?: boolean | null },
-      (t___Field)[] | null
+      t___Field[] | null
     >
-    inputFields: (t___InputValue)[] | null
-    interfaces: (t___Type)[] | null
+    inputFields: t___InputValue[] | null
+    interfaces: t___Type[] | null
     kind: t___TypeKind
     name: t_String | null
     ofType: t___Type | null
-    possibleTypes: (t___Type)[] | null
+    possibleTypes: t___Type[] | null
   },
   Extension<'__Type'>
 >
@@ -31643,7 +31645,7 @@ type t___Type = FieldsType<
 type t___Field = FieldsType<
   {
     __typename: t_String<'__Field'>
-    args: (t___InputValue)[]
+    args: t___InputValue[]
     deprecationReason: t_String | null
     description: t_String | null
     isDeprecated: t_Boolean
@@ -31660,9 +31662,9 @@ type t___Field = FieldsType<
 type t___Directive = FieldsType<
   {
     __typename: t_String<'__Directive'>
-    args: (t___InputValue)[]
+    args: t___InputValue[]
     description: t_String | null
-    locations: (t___DirectiveLocation)[]
+    locations: t___DirectiveLocation[]
     name: t_String
 
     /**

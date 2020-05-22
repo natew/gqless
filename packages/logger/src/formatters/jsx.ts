@@ -27,7 +27,7 @@ export function createElement(
     props,
     ...children
       .map((child: any) =>
-        Array.isArray(child) && !child.find(e => !Array.isArray(e))
+        Array.isArray(child) && !child.find((e) => !Array.isArray(e))
           ? child
           : [child]
       )

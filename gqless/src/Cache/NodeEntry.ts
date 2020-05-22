@@ -48,7 +48,7 @@ export class NodeEntry {
 
     return {
       keys,
-      instances: Array.from(this.instances).map(value =>
+      instances: Array.from(this.instances).map((value) =>
         deep === true ? value.toJSON() : value
       ),
     }

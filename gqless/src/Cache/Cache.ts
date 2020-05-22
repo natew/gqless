@@ -34,7 +34,7 @@ export class Cache extends Disposable {
 
       addToEntries(this.rootValue)
       this.references.onReference(addToEntries)
-      this.references.onUnreference(value => {
+      this.references.onUnreference((value) => {
         if (!this.entries.has(value.node)) return
         const graphNode = this.entries.get(value.node)!
 
@@ -68,7 +68,7 @@ export class Cache extends Disposable {
   public toJSON(deep = true) {
     const types: any = {}
 
-    this.entries.forEach(nodeEntry => {
+    this.entries.forEach((nodeEntry) => {
       types[nodeEntry.node.toString()] =
         deep === true ? nodeEntry.toJSON() : nodeEntry
     })

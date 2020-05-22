@@ -12,7 +12,7 @@ export const print = (
     if (!children.length) return ''
 
     return ` {\n${indent(
-      children.map(child => `${child}${printFields(child)}`).join('\n')
+      children.map((child) => `${child}${printFields(child)}`).join('\n')
     )}\n}`
   }
 

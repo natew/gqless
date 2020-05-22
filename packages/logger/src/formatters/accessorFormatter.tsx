@@ -18,8 +18,8 @@ export const accessorFormatter = {
           <Path
             path={path}
             objectDepth={config.objectDepth}
-            isRoot={accessor => accessor instanceof RootAccessor}
-            isFragment={accessor => accessor instanceof FragmentAccessor}
+            isRoot={(accessor) => accessor instanceof RootAccessor}
+            isFragment={(accessor) => accessor instanceof FragmentAccessor}
           />
 
           {children.length ? (
@@ -27,7 +27,7 @@ export const accessorFormatter = {
               elements={children}
               objectDepth={config.objectDepth}
               colon={!(accessor instanceof FragmentAccessor)}
-              isFragment={accessor => accessor instanceof FragmentAccessor}
+              isFragment={(accessor) => accessor instanceof FragmentAccessor}
             />
           ) : (
             (config.objectDepth || accessor.node instanceof ScalarNode) && (
@@ -56,7 +56,7 @@ export const accessorFormatter = {
 
     return (
       <Tree>
-        {children.map(accessor => (
+        {children.map((accessor) => (
           <TreeItem
             object={accessor}
             root={!!accessor.children.length}

@@ -13,9 +13,9 @@ import { Variable } from './Variable'
 type RequiredKeys<T> = {
   [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K
 }[keyof T]
-type UnionToIntersection<U> = (U extends any
-? (k: U) => void
-: never) extends (k: infer I) => void
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+  k: infer I
+) => void
   ? I
   : never
 type IfAny<T, Y, N> = 0 extends 1 & T ? Y : N

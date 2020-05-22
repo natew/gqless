@@ -7,16 +7,16 @@ export class Record {
   constructor(public isArray = false, public keys: RecordKey[] = []) {}
 
   public has(key: Key) {
-    return this.keys.some(k => k.key === key)
+    return this.keys.some((k) => k.key === key)
   }
 
   public get(key: Key) {
-    return this.keys.find(k => k.key === key)
+    return this.keys.find((k) => k.key === key)
   }
 
   public set(key: Key | undefined, value: NodePath<t.Node | null>) {
     if (key !== undefined) {
-      const i = this.keys.findIndex(k => k.key === key)
+      const i = this.keys.findIndex((k) => k.key === key)
       if (i > -1) {
         if (this.keys[i].valuePath === value) return
 

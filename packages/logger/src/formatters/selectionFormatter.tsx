@@ -15,14 +15,14 @@ export const selectionFormatter = {
           <Path
             path={[selection]}
             objectDepth={config.objectDepth}
-            isRoot={selection => selection.constructor === Selection}
-            isFragment={selection => selection instanceof Fragment}
+            isRoot={(selection) => selection.constructor === Selection}
+            isFragment={(selection) => selection instanceof Fragment}
           />
           {selections.size && (
             <Preview
               elements={Array.from(selections)}
               objectDepth={config.objectDepth}
-              isFragment={s => s instanceof Fragment}
+              isFragment={(s) => s instanceof Fragment}
             />
           )}
         </div>
@@ -40,7 +40,7 @@ export const selectionFormatter = {
 
     return (
       <Tree>
-        {selections.map(selection => (
+        {selections.map((selection) => (
           <TreeItem
             object={selection}
             root={!!selection.selections.size}

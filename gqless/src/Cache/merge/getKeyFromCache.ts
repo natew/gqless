@@ -3,7 +3,11 @@ import { keyIsValid, Extension } from '../../Node'
 import { NodeEntry } from '../NodeEntry'
 import { Cache } from '../Cache'
 
-export const getKeyFromCache = (cache: Cache, value: Value, extensions: Extension[]) => {
+export const getKeyFromCache = (
+  cache: Cache,
+  value: Value,
+  extensions: Extension[]
+) => {
   const node = value.node
 
   let entry = cache.entries.get(node)
@@ -12,7 +16,7 @@ export const getKeyFromCache = (cache: Cache, value: Value, extensions: Extensio
   // if the key exists in the cache, then return it
   // else create a new cache entry
   let preferedKey: unknown
-  let result: { key: any, value: Value } | undefined
+  let result: { key: any; value: Value } | undefined
   for (const extension of extensions) {
     if (!extension.isKeyable) continue
 

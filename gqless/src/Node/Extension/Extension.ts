@@ -31,7 +31,7 @@ export abstract class Extension {
   @computed
   /** A unique key to share instances of a Fragment between extensions */
   protected get fragmentKey() {
-    return this.path.map(ref => ref.fragmentKeyedBy).filter(Boolean)
+    return this.path.map((ref) => ref.fragmentKeyedBy).filter(Boolean)
   }
 
   @computed

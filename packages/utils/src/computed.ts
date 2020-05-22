@@ -5,7 +5,7 @@ export const computed = <T>(
 ) => {
   const getValue = descriptor.get
 
-  descriptor.get = function(this: any) {
+  descriptor.get = function (this: any) {
     const value = getValue?.call(this)
     Object.defineProperty(this, propertyKey, {
       enumerable: true,

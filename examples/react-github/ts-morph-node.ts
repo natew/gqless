@@ -10,7 +10,7 @@ const project = new Project({
   tsConfigFilePath: './tsconfig.json',
 })
 
-console.log(project.getAmbientModules().map(m => m.getName()))
+console.log(project.getAmbientModules().map((m) => m.getName()))
 
 if (false) {
   const langService = project.getLanguageService()
@@ -28,7 +28,7 @@ if (false) {
 
     const references = query
       .findReferences()
-      .map(r => r.getReferences())
+      .map((r) => r.getReferences())
       .flat()
 
     Object.assign(global, { query, references })

@@ -3,7 +3,7 @@ export const deepJSONEqual = (
   b: any,
   customCompare?: (a: any, b: any) => boolean | undefined
 ) => {
-  const isEqual = customCompare?.(a,b)
+  const isEqual = customCompare?.(a, b)
   if (isEqual !== undefined) return isEqual
 
   // Called in JSON.stringify (currently not used internally)
@@ -21,7 +21,8 @@ export const deepJSONEqual = (
       length = a.length
 
       if (length !== b.length) return false
-      for (i = length; i-- !== 0; ) if (!deepJSONEqual(a[i], b[i], customCompare)) return false
+      for (i = length; i-- !== 0; )
+        if (!deepJSONEqual(a[i], b[i], customCompare)) return false
       return true
     }
 

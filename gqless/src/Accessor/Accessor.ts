@@ -77,7 +77,7 @@ export abstract class Accessor<
         // On un-select, dispose of self
         // used when you do `query.users()`, and an argumentless
         // selection is created before the function call
-        parent.selection.onUnselect.filter(s => s === selection)(() =>
+        parent.selection.onUnselect.filter((s) => s === selection)(() =>
           this.dispose()
         )
       )
@@ -117,7 +117,7 @@ export abstract class Accessor<
       this.data = this.getData()
     }
 
-    accessorInterceptors.forEach(intercept => intercept(this))
+    accessorInterceptors.forEach((intercept) => intercept(this))
 
     return this._data
   }
@@ -215,12 +215,12 @@ export abstract class Accessor<
       `can't update ${this.path} value without parent value`
     )
 
-    const valueless = new Set(this.children.filter(a => !a.value))
+    const valueless = new Set(this.children.filter((a) => !a.value))
     this.parent.value.set(this.toString(), value)
 
     afterTransaction(() => {
       const accessorWithoutValue = this.children.find(
-        a => !a.value && !valueless.has(a)
+        (a) => !a.value && !valueless.has(a)
       )
 
       // If a child accessor is missing a value, then
@@ -253,11 +253,11 @@ export abstract class Accessor<
     }
 
     if (find instanceof Selection) {
-      const accessor = this.children.find(c => c.selection === find) as any
+      const accessor = this.children.find((c) => c.selection === find) as any
       return accessor
     }
 
-    return this.children.find(c => c.toString() === String(find)) as any
+    return this.children.find((c) => c.toString() === String(find)) as any
   }
 
   public getDefaultFragment(node: ObjectNode) {
