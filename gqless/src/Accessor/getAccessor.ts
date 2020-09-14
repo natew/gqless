@@ -10,10 +10,10 @@ const interceptor = new Interceptor()
 interceptor.onAccessor(accessor => {
   lastAccessor = accessor
 
-  clearTimeout(timer)
-  timer = setTimeout(() => {
-    lastAccessor = null
-  })
+  // clearTimeout(timer)
+  // timer = setTimeout(() => {
+  //   lastAccessor = null
+  // })
 })
 interceptor.start()
 

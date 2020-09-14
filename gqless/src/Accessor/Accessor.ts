@@ -237,7 +237,11 @@ export abstract class Accessor<
 
   public setData(data: any) {
     // @TODO
-    console.log('set', this.path.toString(), data)
+    // @ts-ignore
+    if (typeof window !== 'undefined' && window['gqlessSetListener']) {
+      // @ts-ignore
+      window['gqlessSetListener'](this, data)
+    }
     this.cache.merge(this, data)
   }
 

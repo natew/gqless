@@ -1,29 +1,22 @@
-import { SelectionTree } from './SelectionTree'
-import { FieldSelection } from '../../Selection'
 import { createMemo } from '@gqless/utils'
 
-const memoized = createMemo()
+import { FieldSelection } from '../../Selection'
+import { SelectionTree } from './SelectionTree'
+
+let id = 0
 
 export const getAlias = (tree: SelectionTree<FieldSelection>) => {
   if (!tree.parent) return
-
-  const fieldAliases = memoized(() => {
-    const aliases = new Map<FieldSelection, string>()
-
-    let id = 0
-    tree.parent!.children.forEach(siblingTree => {
-      if (!(siblingTree.selection instanceof FieldSelection)) return
-
+  for (const siblingTree of tree.parent.children) {
+    if (siblingTree.selection instanceof FieldSelection) {
       if (
-        tree.selection === siblingTree.selection ||
-        tree.selection.field !== siblingTree.selection.field
-      )
-        return
-
-      aliases.set(tree.selection, `${tree.selection.field.name}__${++id}`)
-    })
-    return aliases
-  }, [tree.parent, tree.selection.field])
-
-  return fieldAliases.get(tree.selection)!
+        tree.selection !== siblingTree.selection ||
+        tree.selection.field === siblingTree.selection.field
+      ) {
+        id = (id + 1) % Number.MAX_VALUE
+        return `${tree.selection.field.name}__${id}`
+      }
+    }
+  }
+  return tree.selection.field.name
 }
