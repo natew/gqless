@@ -24,6 +24,9 @@ export const buildSelections = (
     // fragments should never need __typename
     !(tree.selection instanceof Fragment)
 
+  // fix really weird firefox bug
+  if (innerNode) innerNode.constructor.name
+
   const selections = [
     includeTypename && '__typename',
     ...tree.children.map(tree =>
