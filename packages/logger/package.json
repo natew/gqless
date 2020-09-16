@@ -2,7 +2,7 @@
   "license": "GNU GPLv3",
   "private": false,
   "name": "@o/gqless-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "module": "dist/logger.esm.js",
@@ -30,7 +30,7 @@
     "@o/gqless": "^0.0.1-alpha.27"
   },
   "devDependencies": {
-    "@o/gqless": "^0.0.2"
+    "@o/gqless": "^0.0.3"
   },
   "gitHead": "7c27436fcea8e672f07233010401417ea7c59760"
 }
