@@ -2,7 +2,7 @@
   "license": "GNU GPLv3",
   "private": false,
   "name": "@o/gqless-schema",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "module": "dist/schema.esm.js",
