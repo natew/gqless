@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Query } from 'gqless'
+import { Query } from '@o/gqless'
 import { useComponentContext } from '../hooks/useComponentContext'
 import { StackContext } from '../Query'
 import { useAccessors } from './useAccessors'
@@ -104,7 +104,7 @@ export const graphql = <Props extends any>(
             key={i}
             value={[...parentVariant, ...variant]}
           >
-            <WithGraphQL {...props} />
+            <WithGraphQL {...(props as any)} />
           </VariantContext.Provider>
         ))
     }

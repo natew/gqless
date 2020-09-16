@@ -11,7 +11,7 @@ import {
   ArgumentsField,
   FieldNode,
   EnumNode,
-} from 'gqless'
+} from '@o/gqless'
 import { File, UTILS, CORE } from '../../File'
 import { Codegen } from '../../Codegen'
 

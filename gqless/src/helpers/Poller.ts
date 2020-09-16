@@ -7,7 +7,7 @@ import { Query } from '../Scheduler'
 export class Poller {
   private accessor: Accessor
 
-  private timer?: number
+  private timer?: any
   private unstage?: Function
 
   public polling = false

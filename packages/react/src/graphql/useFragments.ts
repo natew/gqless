@@ -1,5 +1,5 @@
 import { VariantFragments } from '../hooks/useComponentContext'
-import { Accessor, Fragment, FragmentAccessor, NetworkStatus } from 'gqless'
+import { Accessor, Fragment, FragmentAccessor, NetworkStatus } from '@o/gqless'
 import { createContext, useContext } from 'react'
 
 export type Variant = [Accessor, Fragment][]

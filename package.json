@@ -2,11 +2,8 @@
   "license": "GNU GPLv3",
   "private": true,
   "workspaces": [
-    "internal/*",
-    "examples/*",
     "packages/*",
     "gqless",
-    "gqless/example",
     "packages/*/example"
   ],
   "scripts": {
@@ -50,10 +47,6 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
     "@changesets/cli": "^2.6.1",
     "@types/jest": "^25.1.4",
     "@types/react": "^16.9.23",
@@ -63,15 +56,14 @@
     "graphql-faker": "^2.0.0-rc.17",
     "husky": "^4.2.3",
     "jest": "^25.2.7",
-    "lerna": "^3.20.2",
-    "parcel-bundler": "^1.12.4",
+    "lerna": "^2.9.0",
     "pretty-quick": "^2.0.1",
     "react": "^0.0.0-experimental-f6b8d31a7",
     "react-dom": "^0.0.0-experimental-f6b8d31a7",
     "ts-jest": "^25.3.1",
     "tsconfig-paths": "^3.9.0",
-    "tsdx": "^0.12.3",
-    "typescript": "^3.8.3"
+    "tsdx": "^0.13.3",
+    "typescript": "^4.0.2"
   },
   "version": "0.0.0"
 }

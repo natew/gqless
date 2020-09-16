@@ -31,7 +31,7 @@ export class Formatter {
   public NEWLINE: string
 
   constructor({
-    prettify = __DEV__,
+    prettify = process.env.NODE_ENV !== 'production',
     variables = false,
     fragments = 'inline',
   }: IFormatterOptions = {}) {

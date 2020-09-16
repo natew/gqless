@@ -98,7 +98,11 @@ const buildFragmentTree = (
   let huggedSelections = hug(indent(selections))
 
   // Add comment with fragment name (for debugging)
-  if (__DEV__ && formatter.options.prettify && tree.selection.name) {
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    formatter.options.prettify &&
+    tree.selection.name
+  ) {
     huggedSelections = huggedSelections.replace(
       '{',
       `{ #[${tree.selection.name}]`

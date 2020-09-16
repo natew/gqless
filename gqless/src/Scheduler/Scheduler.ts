@@ -17,7 +17,7 @@ export class Scheduler extends Disposable {
   constructor(
     private fetchAccessors: AccessorFetcher,
     public plugins: Plugins = new Plugins(),
-    public interval = 50 + (__DEV__ ? 100 : 0)
+    public interval = 50 + (process.env.NODE_ENV !== 'production' ? 100 : 0)
   ) {
     super()
 

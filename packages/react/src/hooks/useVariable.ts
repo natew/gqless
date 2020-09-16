@@ -1,4 +1,4 @@
-import { Variable } from 'gqless'
+import { Variable } from '@o/gqless'
 import { useMemo, useEffect } from 'react'
 import { useComponentMemo } from './useComponentMemo'
 

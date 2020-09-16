@@ -1,4 +1,4 @@
-export const CORE = 'gqless'
+export const CORE = '@o/gqless'
 export const UTILS = '@gqless/utils'
 
 export abstract class File {
