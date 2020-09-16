@@ -1,4 +1,4 @@
-import { Accessor, RootAccessor, ScalarNode, FragmentAccessor } from 'gqless'
+import { Accessor, RootAccessor, ScalarNode, FragmentAccessor } from '@o/gqless'
 
 import { Path, Preview, Tree, TreeItem } from './components'
 import * as React from './jsx'
