@@ -2,7 +2,7 @@
   "license": "GNU GPLv3",
   "private": false,
   "name": "@o/gqless-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "sideEffects": false,
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@o/gqless": "^0.0.1"
+    "@o/gqless": "^0.0.2"
   },
   "gitHead": "7c27436fcea8e672f07233010401417ea7c59760"
 }
