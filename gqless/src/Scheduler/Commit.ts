@@ -124,6 +124,8 @@ export class Commit extends Disposable {
 
       await Promise.all(promises)
     } catch (e) {
+      // @ts-ignore
+      global['latestUnhandledGQLessRejection'] = e
       console.error(e)
     }
 
