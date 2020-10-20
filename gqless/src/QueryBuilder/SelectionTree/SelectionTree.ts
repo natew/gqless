@@ -1,6 +1,6 @@
 import { Selection, FieldSelection, Fragment } from '../../Selection'
 import { getAlias } from './getAlias'
-import { computed } from '@gqless/utils'
+import { computed } from '@o/gqless-utils'
 import { uniquify } from '../../utils'
 import { resolveAliases } from './resolveAliases'
 

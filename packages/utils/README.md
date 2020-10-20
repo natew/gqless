@@ -1,3 +1,3 @@
-# @gqless/utils
+# @o/gqless-utils
 
 Contains utilities used by `gqless` packages

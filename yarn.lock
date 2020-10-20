@@ -1101,9 +1101,9 @@
   dependencies:
     "@f/map-obj" "^1.2.2"
 
-"@gqless/utils@^0.0.1-alpha.26":
+"@o/gqless-utils@^0.0.1-alpha.26":
   version "0.0.1-alpha.27"
-  resolved "https://registry.npmjs.org/@gqless/utils/-/utils-0.0.1-alpha.27.tgz#f7ca669541e80f2a0ede8347a044e5fc7be7cba3"
+  resolved "https://registry.npmjs.org/@o/gqless-utils/-/utils-0.0.1-alpha.27.tgz#f7ca669541e80f2a0ede8347a044e5fc7be7cba3"
   integrity sha512-cCPu03clRg2HxIkT5aZx4s1O6kGUF39hg6l0+O8jVz8AcuSKeNEh1aUqwAc/7h/zWXnSglxgoqeV47N6+SrldQ==
   dependencies:
     tslib "^1.11.1"

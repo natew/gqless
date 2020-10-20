@@ -1,5 +1,5 @@
 import { Value } from '../Value'
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 
 export const deepReference = (rootValue: Value) => {
   const disposers = new Set<Function>()

@@ -9,7 +9,7 @@ import {
 } from './NodeExtension'
 import { PathArray } from '../../utils'
 import { UFragment, Fragment } from '../../Selection'
-import { computed, createMemo, invariant } from '@gqless/utils'
+import { computed, createMemo, invariant } from '@o/gqless-utils'
 import { DataTrait } from '../traits'
 import { ArrayNode } from '../ArrayNode'
 import { createExtension } from './createExtension'

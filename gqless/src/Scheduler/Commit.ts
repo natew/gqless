@@ -3,7 +3,7 @@ import { Accessor, NetworkStatus } from '../Accessor'
 import { Disposable } from '../utils'
 import { queriesFromStacks } from './queriesFromStacks'
 import { Query } from './Query'
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 
 const defaultQuery = new Query()
 

@@ -1,4 +1,4 @@
-import { lazyGetters } from '@gqless/utils'
+import { lazyGetters } from '@o/gqless-utils'
 
 import { ArrayNode, InputNode, ScalarNode } from '../'
 import { EnumNode } from '../EnumNode'

@@ -1,4 +1,4 @@
-import { computed, createEvent, invariant, createMemo } from '@gqless/utils'
+import { computed, createEvent, invariant, createMemo } from '@o/gqless-utils'
 
 import { Cache, Value, afterTransaction } from '../Cache'
 import {

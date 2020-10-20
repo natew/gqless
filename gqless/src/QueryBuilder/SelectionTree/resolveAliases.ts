@@ -1,5 +1,5 @@
 import { SelectionTree } from './SelectionTree'
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 import { ObjectNode, ArrayNode } from '../../Node'
 import { Fragment } from '../../Selection'
 

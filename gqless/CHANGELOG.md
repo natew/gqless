@@ -24,7 +24,7 @@
 
 - da2ae6e: re-release
 - Updated dependencies [da2ae6e]
-  - @gqless/utils@0.0.1-alpha.26
+  - @o/gqless-utils@0.0.1-alpha.26
 
 ## 0.0.1-alpha.25
 
@@ -46,4 +46,4 @@
 
   - Scheduler is now smarter, works reliably with concurrent mode
   - Fragments containing selections with arguments now work- Updated dependencies [689ebdb]
-  - @gqless/utils@0.0.1-alpha.25
+  - @o/gqless-utils@0.0.1-alpha.25

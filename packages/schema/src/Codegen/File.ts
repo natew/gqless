@@ -1,5 +1,5 @@
 export const CORE = '@o/gqless'
-export const UTILS = '@gqless/utils'
+export const UTILS = '@o/gqless-utils'
 
 export abstract class File {
   constructor(public path: string, public overwrite: boolean = true) {}

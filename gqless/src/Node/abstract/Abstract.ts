@@ -1,6 +1,6 @@
 import { ObjectNode } from '../ObjectNode'
 import { ACCESSOR, FragmentAccessor } from '../../Accessor'
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 import {
   DataTrait,
   DataContext,

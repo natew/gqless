@@ -1,6 +1,6 @@
 import { Query, Accessor, Fragment, ObjectNode, Scheduler } from '@o/gqless'
 import { StackContext } from '../Query'
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 
 export type VariantFragments = Map<Accessor, Set<Fragment>>
 export type ComponentFragment = WeakMap<ObjectNode, Fragment>

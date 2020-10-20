@@ -1,5 +1,5 @@
 import { ArrayNode, ObjectNode, DataTrait } from '../Node'
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 
 export type UValueData =
   | string
@@ -88,7 +88,6 @@ export class Value<TNode extends DataTrait = DataTrait> {
     key = String(key)
     const prevValue = (this.data as any)?.[key]
     if (prevValue === value) return
-
     ;(this.data as any)[key] = value
     this.onSet.emit(key, value)
   }
@@ -106,7 +105,7 @@ export class Value<TNode extends DataTrait = DataTrait> {
       if (!this.data) return null
 
       const obj: any = {
-        __typename: this.node.name
+        __typename: this.node.name,
       }
 
       Object.entries(this.data).forEach(([key, value]) => {

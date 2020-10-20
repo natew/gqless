@@ -1,11 +1,7 @@
 {
-  "packages": [
-    "packages/*",
-    "gqless",
-    "packages/*/example"
-  ],
+  "packages": ["packages/*", "gqless", "packages/*/example"],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.0.10",
+  "version": "0.0.11",
   "lerna": "2.9.0"
 }

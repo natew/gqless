@@ -1,4 +1,4 @@
-# @gqless/utils
+# @o/gqless-utils
 
 ## 0.0.1-alpha.27
 

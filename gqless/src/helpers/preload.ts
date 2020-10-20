@@ -1,4 +1,4 @@
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 
 /**
  * Preload a function / React component

@@ -1,6 +1,6 @@
 import { Value } from './Value'
 import { Matchable, keyIsEqual, DataTrait } from '../Node'
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 import stringify from 'json-stable-stringify'
 
 export class NodeEntry {

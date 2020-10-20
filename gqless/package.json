@@ -2,7 +2,7 @@
   "license": "MIT",
   "name": "@o/gqless",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.11",
   "sideEffects": false,
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -23,7 +23,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@gqless/utils": "^0.0.1-alpha.26",
+    "@o/gqless-utils": "*",
     "json-stable-stringify": "^1.0.1",
     "mix-classes": "^1.1.10",
     "tslib": "^2.0.1"

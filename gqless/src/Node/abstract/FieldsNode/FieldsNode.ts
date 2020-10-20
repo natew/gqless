@@ -1,5 +1,5 @@
 import { ScalarNode, ArrayNode, UnionNode, EnumNode } from '../../'
-import { lazyGetters } from '@gqless/utils'
+import { lazyGetters } from '@o/gqless-utils'
 import { FieldNode } from './FieldNode'
 import { NodeExtension } from '../../Extension'
 import { ObjectNode } from '../../ObjectNode'

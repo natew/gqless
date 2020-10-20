@@ -1,4 +1,4 @@
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 
 import { Interceptor } from '../Interceptor'
 import { ACCESSOR, Accessor } from './Accessor'

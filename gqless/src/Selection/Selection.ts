@@ -1,4 +1,4 @@
-import { createEvent, invariant } from '@gqless/utils'
+import { createEvent, invariant } from '@o/gqless-utils'
 import { DataTrait } from '../Node'
 
 export class Selection<TNode extends DataTrait = DataTrait> {

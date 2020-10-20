@@ -1,7 +1,7 @@
 import { Extension } from './Extension'
 import { UNodeExtension } from './NodeExtension'
 import { DataTrait } from '../traits'
-import { computed } from '@gqless/utils'
+import { computed } from '@o/gqless-utils'
 
 export class ComputableExtension extends Extension {
   constructor(

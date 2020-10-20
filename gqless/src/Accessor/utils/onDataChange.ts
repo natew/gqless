@@ -1,6 +1,6 @@
 import { Accessor } from '../Accessor'
 import { EnumNode, ScalarNode } from '../../Node'
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 import { Value } from '../../Cache'
 
 // When value of accessor changes
@@ -10,7 +10,10 @@ export const onDataChange = (accessor: Accessor) => {
 
   let dispose: Function | undefined
 
-  const onValueAssociated = (value: Value | undefined, prevValue: Value | undefined,) => {
+  const onValueAssociated = (
+    value: Value | undefined,
+    prevValue: Value | undefined
+  ) => {
     dispose?.()
     dispose = undefined
 

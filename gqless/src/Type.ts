@@ -5,7 +5,7 @@ import {
   LastTupleValue,
   LastTupleValueForKey,
   TupleKeys,
-} from '@gqless/utils'
+} from '@o/gqless-utils'
 import { Variable } from './Variable'
 import { INDEX, GET_KEY } from './Node'
 

@@ -1,4 +1,4 @@
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 import { deepJSONEqual } from '../../../utils'
 import { Arguments } from '../../Arguments'
 import { FieldAccessor } from '../../../Accessor'

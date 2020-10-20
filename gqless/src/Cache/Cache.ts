@@ -5,44 +5,43 @@ import { merge } from './merge'
 import { ObjectNode, DataTrait } from '../Node'
 import { NodeEntry } from './NodeEntry'
 import { Disposable } from '../utils'
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 import { Transaction } from './Transaction'
 
 export class Cache extends Disposable {
   public references!: ReturnType<typeof deepReference>
   public entries = new Map<DataTrait, NodeEntry>()
 
+  // @ts-ignore
   public onRootValueChange = createEvent<(rootValue: Value) => void>()
 
   constructor(node: ObjectNode) {
     super()
 
-    if (process.env.DISABLE_CACHE !== '1') {
-      this.onRootValueChange(() => {
-        if (this.references) this.references.dispose()
+    this.onRootValueChange(() => {
+      if (this.references) this.references.dispose()
 
-        this.references = deepReference(this.rootValue)
+      this.references = deepReference(this.rootValue)
 
-        const addToEntries = (value: Value) => {
-          if (!this.entries.has(value.node))
-            this.entries.set(value.node, new NodeEntry(value.node))
-          const graphNode = this.entries.get(value.node)!
+      const addToEntries = (value: Value) => {
+        if (!this.entries.has(value.node))
+          this.entries.set(value.node, new NodeEntry(value.node))
+        const graphNode = this.entries.get(value.node)!
 
-          if (graphNode.instances.has(value)) return
+        if (graphNode.instances.has(value)) return
 
-          graphNode.instances.add(value)
-        }
+        graphNode.instances.add(value)
+      }
 
-        addToEntries(this.rootValue)
-        this.references.onReference(addToEntries)
-        this.references.onUnreference(value => {
-          if (!this.entries.has(value.node)) return
-          const graphNode = this.entries.get(value.node)!
+      addToEntries(this.rootValue)
+      this.references.onReference(addToEntries)
+      this.references.onUnreference(value => {
+        if (!this.entries.has(value.node)) return
+        const graphNode = this.entries.get(value.node)!
 
-          graphNode.instances.delete(value)
-        })
+        graphNode.instances.delete(value)
       })
-    }
+    })
 
     this.rootValue = new Value(node)
   }
@@ -59,13 +58,12 @@ export class Cache extends Disposable {
   }
 
   public merge(accessor: Accessor, data: any) {
-    if (process.env.DISABLE_CACHE !== '1') {
-      const transaction = new Transaction()
-      transaction.begin()
-      const value = createPath(accessor, data)
-      merge(this, value, data, accessor.extensions)
-      transaction.end()
-    }
+    const transaction = new Transaction()
+    transaction.begin()
+    const value = createPath(accessor, data)
+    merge(this, value, data)
+    transaction.end()
+    console.log('merged in', this.entries.size)
   }
 
   public toJSON(deep = true) {

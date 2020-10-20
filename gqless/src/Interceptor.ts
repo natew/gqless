@@ -1,4 +1,4 @@
-import { createEvent } from '@gqless/utils'
+import { createEvent } from '@o/gqless-utils'
 import { Accessor } from './Accessor'
 
 export type AccessorInterceptor = (accessor: Accessor) => void

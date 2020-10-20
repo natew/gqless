@@ -1,4 +1,4 @@
-import { invariant } from '@gqless/utils'
+import { invariant } from '@o/gqless-utils'
 
 import { Plugins } from '../Plugin'
 import { Disposable } from '../utils'

@@ -1,4 +1,4 @@
-import { createMemo } from '@gqless/utils'
+import { createMemo } from '@o/gqless-utils'
 import { useComponentContext } from './useComponentContext'
 
 /**
