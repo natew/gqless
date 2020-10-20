@@ -57,6 +57,13 @@ export function resolved<T>(
           dispose()
 
           nonIdleAccessors.delete(accessor)
+
+          // @ts-ignore
+          if (accessor['error']) {
+            // @ts-ignore
+            return reject(accessor['error'])
+          }
+
           if (nonIdleAccessors.size) return
 
           try {

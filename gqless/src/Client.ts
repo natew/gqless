@@ -65,10 +65,18 @@ export class Client<TData = any> extends Disposable {
     if (!result) return
 
     const responsePromise = (async () => {
-      const response = await this.fetchQuery(result.query, result.variables)
-      result.rootTree.resolveAliases(response.data)
-      this.cache.merge(this.accessor, response.data)
-      return response
+      try {
+        const response = await this.fetchQuery(result.query, result.variables)
+        result.rootTree.resolveAliases(response.data)
+        this.cache.merge(this.accessor, response.data)
+        return response
+      } catch (err) {
+        accessors.forEach(acc => {
+          // @ts-ignore
+          acc['error'] = err
+        })
+        return null as any
+      }
     })()
 
     this.plugins.all.onFetch(
