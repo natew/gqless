@@ -13,7 +13,9 @@
     "url": "https://github.com/samdenty/gqless.git",
     "directory": "packages/babel-plugin-gqless"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "tsdx watch",
     "build": "tsdx build",
@@ -23,7 +25,7 @@
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.0.0",
     "@babel/plugin-syntax-jsx": "^7.2.0",
-    "@gqless/utils": "^0.0.1-alpha.26",
+    "@gqless/utils": "*",
     "fast-deep-equal": "^3.1.1",
     "tsconfig-paths": "^3.9.0",
     "tslib": "^1.10.0"

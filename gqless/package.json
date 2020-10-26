@@ -14,14 +14,16 @@
     "directory": "gqless"
   },
   "typings": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "tsdx watch",
     "build": "tsdx build",
     "test": "jest"
   },
   "dependencies": {
-    "@gqless/utils": "^0.0.1-alpha.26",
+    "@gqless/utils": "*",
     "json-stable-stringify": "^1.0.1",
     "mix-classes": "^1.1.10",
     "tslib": "^1.11.1"
